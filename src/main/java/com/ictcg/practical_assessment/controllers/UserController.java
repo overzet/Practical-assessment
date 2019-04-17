@@ -11,7 +11,7 @@ import java.util.Locale;
 
 @RestController//to be able to receive HTTP requests,
 @RequestMapping("date")//that match this URL path http://localhost:8080/date
-public class UserCotroller {
+public class UserController {
 
     @GetMapping//bind this method to HTTP get request
     public String getDate() {
