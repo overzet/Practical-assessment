@@ -18,7 +18,7 @@ public class DateController {
 //        this.sourceConfig = sourceConfig;
 //    }
 
-    @GetMapping("/getDate")
+    @GetMapping
     public String getDate() {
         return sourceConfig.getDate();
     }
