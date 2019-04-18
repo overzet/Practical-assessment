@@ -13,9 +13,10 @@ public class DateController {
     @Autowired
     private DateService sourceConfig;
 
-    public void setSourceConfig(DateService sourceConfig) {
-        this.sourceConfig = sourceConfig;
-    }
+//  Whu is this not needed?
+//    public void setSourceConfig(DateService sourceConfig) {
+//        this.sourceConfig = sourceConfig;
+//    }
 
     @GetMapping("/getDate")
     public String getDate() {
