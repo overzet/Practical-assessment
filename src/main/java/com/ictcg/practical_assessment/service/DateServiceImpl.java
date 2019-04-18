@@ -1,22 +1,20 @@
 package com.ictcg.practical_assessment.service;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-@Component
-@Profile("date")
-public class DataSourceConfig implements SourceConfig {
+@Service
+public class DateServiceImpl implements DateService {
     @Override
-    public void getDate() {
+    public String getDate() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm", Locale.GERMAN);
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
         String f = formatter.format(time);
-        System.out.println("date: " + date + ",\ntime: " + f);
+        return ("date: " + date + ",\ntime: " + f);
     }
 }
