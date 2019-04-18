@@ -13,7 +13,7 @@ public class DateController {
     @Autowired
     private DateService sourceConfig;
 
-//  Whu is this not needed?
+//  Why is this not needed?
 //    public void setSourceConfig(DateService sourceConfig) {
 //        this.sourceConfig = sourceConfig;
 //    }
