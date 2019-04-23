@@ -6,21 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController//to be able to receive HTTP requests,
+@RestController//to be able to receive HTTP requests
 @RequestMapping("date")
+
 public class DateController {
 
     @Autowired
-    private DateService sourceConfig;
-
-//  Why is this not needed?
-//    public void setSourceConfig(DateService sourceConfig) {
-//        this.sourceConfig = sourceConfig;
-//    }
+    private DateService dateService;
 
     @GetMapping
     public String getDate() {
-        return sourceConfig.getDate();
+        return dateService.getDate();
     }
 
 
