@@ -22,6 +22,6 @@ public class DateAtHost extends java.util.Date {
         int time = din.readInt();
         server.close();
 
-        setTime(((1L << 32) + time - offset) = 1000);
+        setTime(((1L << 32) + time - offset) * 1000);
     }
 }
