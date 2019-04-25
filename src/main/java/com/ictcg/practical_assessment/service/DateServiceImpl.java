@@ -12,12 +12,18 @@ import java.util.Locale;
 public class DateServiceImpl implements DateService {
     @Override
     public String getDate() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm", Locale.GERMAN);
 
-        LocalDate date = DateModel.getLocalDate();
-        LocalTime time = DateModel.getLocalTime();
+        DateModel dateModel = new DateModel();
 
-        String f = formatter.format(time);
-        return ("date: " + date + ",\ntime: " + f);
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/YYYY", Locale.GERMAN);
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm", Locale.GERMAN);
+
+        dateModel.setLocalDate(LocalDate.now());
+        dateModel.setLocalTime(LocalTime.now());
+
+        String sDate = dateModel.getLocalDate().format(dateFormatter);
+        String sTime = dateModel.getLocalTime().format(timeFormatter);
+
+        return " date: \"" + sDate + "\",\ntime:  \"" + sTime + "\"";
     }
 }

@@ -2,23 +2,14 @@ package com.ictcg.practical_assessment.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Data
-@Entity
-public class DateModel {
+//@ Entity, there is nothing to persist. And the dependency 'jpa' gives an error
+public class DateModel {// the model contains your data
 
-    private static LocalTime localTime;
-    private static LocalDate localDate;
-
-    public static LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public static LocalTime getLocalTime() {
-        return localTime;
-    }
+    private LocalTime localTime;
+    private LocalDate localDate;
 
 }

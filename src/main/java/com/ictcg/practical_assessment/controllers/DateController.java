@@ -13,10 +13,7 @@ public class DateController {
     @Autowired
     private DateService sourceConfig;
 
-//TODO add parameter isUS if it is true you will send in am/pm format
-    //implementation should be done in service for that
-    //Add model class Date and return it as response
-    @GetMapping
+    @GetMapping("/getDate")
     public String getDate() {
         return sourceConfig.getDate();
     }
