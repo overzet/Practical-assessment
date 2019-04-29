@@ -23,7 +23,7 @@ public class DateServiceImpl implements DateService {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm", Locale.FRENCH);
 
         //US
-        DateTimeFormatter usaDateFormat = DateTimeFormatter.ofPattern("dd MMM yyyy a");
+        DateTimeFormatter usaDateFormat = DateTimeFormatter.ofPattern("dd MMM yyyy");
         DateTimeFormatter usaTimeFormat = DateTimeFormatter.ofPattern("h:mm a");
 
         //EU
