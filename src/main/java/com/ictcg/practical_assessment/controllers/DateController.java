@@ -17,8 +17,11 @@ public class DateController {
     @GetMapping("/getDate/{countryCode}")
     public String getDate(@PathVariable String countryCode) {
 
+        //countryCode.addAttribute("theDate", new java.util.Date());
+
         return sourceConfig.getDate(countryCode);
     }
 
 
 }
+
