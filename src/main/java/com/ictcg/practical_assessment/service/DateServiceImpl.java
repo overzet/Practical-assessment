@@ -18,27 +18,34 @@ public class DateServiceImpl implements DateService {
         dateModel.setLocalDate(LocalDate.now());
         dateModel.setLocalTime(LocalTime.now());
 
-        //EU
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/YYYY", Locale.FRENCH);
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm", Locale.FRENCH);
+        if (countryCode.equals("US")) {
 
-        //EU
-        String sDate = dateModel.getLocalDate().format(dateFormatter);
-        String sTime = dateModel.getLocalTime().format(timeFormatter);
+            //US
+            DateTimeFormatter usaDateFormat = DateTimeFormatter.ofPattern("MMM dd yyyy");
+            DateTimeFormatter usaTimeFormat = DateTimeFormatter.ofPattern("h:mm a");
 
+            //US
+            String uDate = dateModel.getLocalDate().format(usaDateFormat);
+            String uTime = dateModel.getLocalTime().format(usaTimeFormat);
 
-        //US
-        DateTimeFormatter usaDateFormat = DateTimeFormatter.ofPattern("MMM dd yyyy");
-        DateTimeFormatter usaTimeFormat = DateTimeFormatter.ofPattern("h:mm a");
+            //US
+            return "date: \"" + uDate + "\",\ntime:  \"" + uTime + "\"";
 
-        //US
-        String uDate = dateModel.getLocalDate().format(usaDateFormat);
-        String uTime = dateModel.getLocalTime().format(usaTimeFormat);
+        } else if (countryCode.equals("EU")) {
 
-        //US
-        //return "date: \"" + uDate + "\",\ntime:  \"" + uTime + "\"";
+            //EU
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/YYYY", Locale.FRENCH);
+            DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm", Locale.FRENCH);
 
-        //EU
-        return "date: \"" + sDate + "\",\ntime:  \"" + sTime + "\"";
+            //EU
+            String sDate = dateModel.getLocalDate().format(dateFormatter);
+            String sTime = dateModel.getLocalTime().format(timeFormatter);
+
+            return "date: \"" + sDate + "\",\ntime:  \"" + sTime + "\"";
+        } else {
+
+            return "Not a valid code!";
+        }
+
     }
 }
