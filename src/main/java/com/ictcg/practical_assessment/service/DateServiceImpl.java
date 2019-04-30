@@ -11,7 +11,7 @@ import java.util.Locale;
 @Service
 public class DateServiceImpl implements DateService {
     @Override
-    public String getDate(String countryCode) {
+    public DateModel getDate(String countryCode) {
 
         DateModel dateModel = new DateModel();
 
@@ -26,7 +26,7 @@ public class DateServiceImpl implements DateService {
             String uDate = dateModel.getLocalDate().format(usaDateFormat);
             String uTime = dateModel.getLocalTime().format(usaTimeFormat);
 
-            return "date: \"" + uDate + "\",\ntime:  \"" + uTime + "\"";
+            return dateModel;
 
         } else if (countryCode.equals("EU")) {
 
@@ -36,11 +36,11 @@ public class DateServiceImpl implements DateService {
             String sDate = dateModel.getLocalDate().format(dateFormatter);
             String sTime = dateModel.getLocalTime().format(timeFormatter);
 
-            return "date: \"" + sDate + "\",\ntime:  \"" + sTime + "\"";
+            return dateModel;
 
         } else {
 
-            return "Not a valid code!";
+            return null;
         }
 
     }

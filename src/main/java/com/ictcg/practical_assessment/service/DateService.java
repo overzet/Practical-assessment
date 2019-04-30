@@ -1,8 +1,10 @@
 package com.ictcg.practical_assessment.service;
 
+import com.ictcg.practical_assessment.model.DateModel;
+
 public interface DateService {
 
-    String getDate(String countryCode);
+    DateModel getDate(String countryCode);
 
 }
 

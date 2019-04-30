@@ -1,5 +1,6 @@
 package com.ictcg.practical_assessment.controllers;
 
+import com.ictcg.practical_assessment.model.DateModel;
 import com.ictcg.practical_assessment.service.DateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +16,7 @@ public class DateController {
     private DateService sourceConfig;
 
     @GetMapping("/getDate/{countryCode}")
-    public String getDate(@PathVariable String countryCode) {
-
-        //countryCode.addAttribute("theDate", new java.util.Date());
+    public DateModel getDate(@PathVariable String countryCode) {
 
         return sourceConfig.getDate(countryCode);
     }
