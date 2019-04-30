@@ -11,7 +11,7 @@ import java.util.Locale;
 @Service
 public class DateServiceImpl implements DateService {
     @Override
-    public String getDate() {
+    public String getDate(String countryCode) {
 
         DateModel dateModel = new DateModel();
 
@@ -22,22 +22,23 @@ public class DateServiceImpl implements DateService {
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/YYYY", Locale.FRENCH);
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm", Locale.FRENCH);
 
-        //US
-        DateTimeFormatter usaDateFormat = DateTimeFormatter.ofPattern("dd MMM yyyy");
-        DateTimeFormatter usaTimeFormat = DateTimeFormatter.ofPattern("h:mm a");
-
         //EU
         String sDate = dateModel.getLocalDate().format(dateFormatter);
         String sTime = dateModel.getLocalTime().format(timeFormatter);
+
+
+        //US
+        DateTimeFormatter usaDateFormat = DateTimeFormatter.ofPattern("MMM dd yyyy");
+        DateTimeFormatter usaTimeFormat = DateTimeFormatter.ofPattern("h:mm a");
 
         //US
         String uDate = dateModel.getLocalDate().format(usaDateFormat);
         String uTime = dateModel.getLocalTime().format(usaTimeFormat);
 
-        //EU
-        //return " date: \"" + sDate + "\",\ntime:  \"" + sTime + "\"";
-
         //US
-        return " date: \"" + uDate + "\",\ntime:  \"" + uTime + "\"";
+        //return "date: \"" + uDate + "\",\ntime:  \"" + uTime + "\"";
+
+        //EU
+        return "date: \"" + sDate + "\",\ntime:  \"" + sTime + "\"";
     }
 }

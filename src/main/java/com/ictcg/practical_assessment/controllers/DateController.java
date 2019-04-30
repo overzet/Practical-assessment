@@ -3,6 +3,7 @@ package com.ictcg.practical_assessment.controllers;
 import com.ictcg.practical_assessment.service.DateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +14,10 @@ public class DateController {
     @Autowired
     private DateService sourceConfig;
 
-    @GetMapping("/getDate")
-    public String getDate() {
-        return sourceConfig.getDate();
+    @GetMapping("/getDate/{countryCode}")
+    public String getDate(@PathVariable String countryCode) {
+
+        return sourceConfig.getDate(countryCode);
     }
 
 
