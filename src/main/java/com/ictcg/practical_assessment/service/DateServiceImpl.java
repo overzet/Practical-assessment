@@ -3,9 +3,9 @@ package com.ictcg.practical_assessment.service;
 import com.ictcg.practical_assessment.model.DateModel;
 import org.springframework.stereotype.Service;
 
-@Service
-public class DateServiceImpl implements DateService {
-    @Override
+@Service //it’s a good idea to use @Service over @Component
+public class DateServiceImpl {
+    // @Override
     public DateModel getDate(String countryCode) {
         return null;
     }
