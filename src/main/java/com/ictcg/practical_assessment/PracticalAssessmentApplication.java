@@ -12,8 +12,8 @@ public class PracticalAssessmentApplication {
 
     public static void main(String[] args) {
 
-//        log.info("Info running");
-//        log.debug("Debug running");
+        log.info("Info running");
+        log.debug("Debug running");
         SpringApplication.run(PracticalAssessmentApplication.class, args);
 
     }
