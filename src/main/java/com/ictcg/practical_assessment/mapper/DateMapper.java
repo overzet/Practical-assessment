@@ -8,6 +8,6 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface DateMapper {
 
-    //@Mapping(target = "title", source = "name")
+    //@Mapping(target = "ID", source = "id")
     DateDTO customer2DTO(DateModel dateModel);
 }
