@@ -14,7 +14,7 @@
     <name>practical_assessment</name>
     <description>Demo project for Spring Boot</description>
 
-
+<!--TODO info, This can be defined in scope of each DI, but like this is also good-->
     <properties>
         <java.version>1.8</java.version>
         <org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
@@ -50,6 +50,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!--TODO Try to group DI (all spring as group), move this with other spring-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -60,6 +61,7 @@
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
         </dependency>
+        <!--TODO info we need this so IDE knows how to use lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -69,6 +71,12 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <!-- TODO You can remove this version instead of unknown also you already have this DI at the top off application-->
+            <version>unknown</version>
         </dependency>
 
     </dependencies>
@@ -93,6 +101,7 @@
                             <artifactId>mapstruct-processor</artifactId>
                             <version>${org.mapstruct.version}</version>
                         </path>
+                        <!--TODO just info, We need this so server can also use lombok when application is deployed-->
                         <path>
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>

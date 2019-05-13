@@ -5,6 +5,7 @@ import com.ictcg.practical_assessment.model.DateModel;
 import org.mapstruct.Mapper;
 
 //@Mapper(componentModel = "cdi")
+//TODO Mapper should have componentModel = "spring"
 @Mapper
 public interface DateMapper {
 

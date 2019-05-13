@@ -3,6 +3,7 @@ package com.ictcg.practical_assessment.service;
 import com.ictcg.practical_assessment.model.DateModel;
 import org.springframework.stereotype.Service;
 
+//TODO @Service and @Component are as good, they do the same thing just have some other way of implementation and configuration
 @Service //it’s a good idea to use @Service over @Component
 public class DateServiceImpl {
     //@Override
