@@ -1,19 +1,19 @@
 package com.ictcg.practical_assessment.service;
 
-import com.ictcg.practical_assessment.model.DateModel;
+import com.ictcg.practical_assessment.model.Date;
 import org.springframework.stereotype.Service;
 
 @Service //it’s a good idea to use @Service over @Component
 public class DateServiceImpl {
     //@Override
-    public DateModel getDate(String countryCode) {
+    public Date getDate(String countryCode) {
         return null;
     }
 /*
     @Override
-    public DateModel getDate(String countryCode) {
+    public Date getDate(String countryCode) {
 
-        DateModel dateModel = new DateModel();
+        Date dateModel = new Date();
 
         dateModel.setLocalDate(LocalDate.now());
         dateModel.setLocalTime(LocalTime.now());
