@@ -20,18 +20,18 @@ public class DateController {
         return sourceConfig.getDate(countryCode);
     }
 
-    @PostMapping(path = "/add") // Map ONLY GET Requests
-    public @ResponseBody
-    String addNewUser(@RequestParam String name, @RequestParam String email) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
-
-        Date n = new Date();
-        n.setName(name);
-        n.setEmail(email);
-        sourceConfig.save(n);
-        return "Saved";
-    }
+//    @PostMapping(path = "/add")
+//    public @ResponseBody
+//    String addNewUser(@RequestParam String name, @RequestParam String email) {
+//        // @ResponseBody means the returned String is the response, not a view name
+//        // @RequestParam means it is a parameter from the GET or POST request
+//
+//        Date n = new Date();
+//        n.setName(name);
+//        n.setEmail(email);
+//        sourceConfig.save(n);
+//        return "Saved";
+//    }
 
     @GetMapping(path = "/all")
     public @ResponseBody
