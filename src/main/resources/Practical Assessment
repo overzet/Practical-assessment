@@ -1,4 +1,5 @@
-Title: Practical assessment
+
+                                Title: Practical assessment
 
 About: To make this course also more interesting and to give you some practical experience,
 we are going to use everything from course in practice.
@@ -22,3 +23,41 @@ Response: date: “10/4/2019”,
 Time: 3-5 days
 
 
+                                            II Phase
+
+We will continue with this backend application so we can have backend API that we can use it later on when we start with Angular. The goal is to create Inter10 application that can be used for creating tests, sending emails about results, etc.
+
+We are going to create application for questions and answers and later on to add also some graph view, automation etc. Everything will be called and setup from UI,
+also we need to add db layer.
+I have found some easy free mysql db, it is on cloud. So you just need to register and to copy paste url in your spring boot app. We will go step by step with each part.
+
+Next steps:
+
+
+To finish with Date with need also DateEntity and we need DateMapper the goal of DateMapper is to have methods like mapToDto and mapToEntity. We need them as we are working with Entities when we have some action with db from application layer and after we want to send that data by HTTP Request to some Frontend application we need to send it in Model(Not Entity).
+
+Entity: An entity represents a single instance of your domain object saved into the database as a record. It has some attributes that we represent as columns in our tables.
+Model: A model typically represents a real world object that is related to the problem or domain space. In programming, we create classes to represent objects. These classes, known as models, have some properties and methods (defining objects behavior).
+
+So you need to have all of these for each functionality:
+
+
+Model
+Entity
+Service(Abstraction and Impl)
+Controller
+Mapper(Abstraction and Impl this is done with MapStruct)
+Repository(@Repository annotation on interface and extends JpaRepository)
+
+
+Read a little bit more about MapStruct why we need it etc in link from above.
+Create SQL DB here SQL DB and connect to your application.
+Create CRUD for each functionality that will be added later on for now just Date(later on User,Questions, etc).
+Add DateMapper
+Create in UML online platform example how would you create and connect tables and which tables would you use example of tools for this - UML tool
+Create one endpoint test for R- read operation where you will use @Test annotation.
+Example you will call localhost:8080/getDate on that date you will add 4 weeks and expect that the date is one month after. This part should be done by creating new Class in test package DateServiceTest and inside of it you will create it and test it.
+
+
+
+Time: 2 weeks
