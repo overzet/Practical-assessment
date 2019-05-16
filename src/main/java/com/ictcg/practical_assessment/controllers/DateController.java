@@ -26,11 +26,11 @@ public class DateController {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
-        Date n = new Date("Eric", "evans@gmail.com");
-        n.setName(name);
-        n.setEmail(email);
-        sourceConfig.save(n);
-        return "Saved";
+//        Date n = new Date("Eric", "evans@gmail.com");
+//        n.setName(name);
+//        n.setEmail(email);
+//        sourceConfig.save(n);
+        return sourceConfig.save(name, email);
     }
 
     @GetMapping(path = "/all")
