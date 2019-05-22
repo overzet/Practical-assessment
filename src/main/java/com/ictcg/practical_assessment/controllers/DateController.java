@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class DateController {
 
     @Autowired
-    private DateService sourceConfig;
+    private DateService sourceConfig;//dateService
 
     @GetMapping("/getDate/{countryCode}")
     public Date getDate(@PathVariable String countryCode) {
@@ -20,17 +20,13 @@ public class DateController {
         return sourceConfig.getDate(countryCode);
     }
 
-    @PostMapping(path = "/add")
-    public @ResponseBody
-    String addNewUser(@RequestParam String name, @RequestParam String email) {
+    @GetMapping(path = "/add")
+    public String addNewUser(@RequestParam String name, @RequestParam String email) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
-
-//        Date n = new Date("Eric", "evans@gmail.com");
-//        n.setName(name);
-//        n.setEmail(email);
-//        sourceConfig.save(n);
-        return sourceConfig.save(name, email);
+        Date date = new Date(name, email);
+        sourceConfig.save(date);
+        return "Saved";
     }
 
     @GetMapping(path = "/all")
