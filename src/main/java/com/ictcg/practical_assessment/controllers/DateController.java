@@ -1,7 +1,7 @@
 package com.ictcg.practical_assessment.controllers;
 
 import com.ictcg.practical_assessment.model.Date;
-import com.ictcg.practical_assessment.service.DateService;
+import com.ictcg.practical_assessment.service.DateRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 public class DateController {
 
     @Autowired
-    private DateService sourceConfig;//dateService
+    private DateRepository dateService;
 
     @GetMapping("/getDate/{countryCode}")
     public Date getDate(@PathVariable String countryCode) {
 
-        return sourceConfig.getDate(countryCode);
+        return dateService.getDate(countryCode);
     }
 
     @GetMapping(path = "/add")
@@ -25,7 +25,7 @@ public class DateController {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
         Date date = new Date(name, email);
-        sourceConfig.save(date);
+        dateService.save(date);
         return "Saved";
     }
 
@@ -33,7 +33,7 @@ public class DateController {
     public @ResponseBody
     Iterable<Date> getAllUsers() {
         // This returns a JSON or XML with the users
-        return sourceConfig.findAll();
+        return dateService.findAll();
     }
 
 
