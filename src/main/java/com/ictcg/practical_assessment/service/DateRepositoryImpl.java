@@ -3,15 +3,14 @@ package com.ictcg.practical_assessment.service;
 import com.ictcg.practical_assessment.model.Date;
 import org.springframework.stereotype.Service;
 
-//@Service and @Component are as good, they do the same thing just have some other way of implementation and configuration
-@Service //it’s a good idea to use @Service over @Component
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+@Service
 public class DateRepositoryImpl {
-    //@Override
-    public Date getDate(String countryCode) {
-        return null;
-    }
-/*
-    @Override
+
     public Date getDate(String countryCode) {
 
         Date dateModel = new Date();
@@ -45,5 +44,5 @@ public class DateRepositoryImpl {
         }
 
     }
-*/
+
 }

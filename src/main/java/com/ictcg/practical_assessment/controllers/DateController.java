@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 public class DateController {
 
     @Autowired
-    private DateRepository dateService;
+    private DateRepository dateRepository;
 
     @GetMapping("/getDate/{countryCode}")
     public Date getDate(@PathVariable String countryCode) {
 
-        return dateService.getDate(countryCode);
+        return dateRepository.getDate(countryCode);
     }
 
     @GetMapping(path = "/add")
@@ -25,7 +25,7 @@ public class DateController {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
         Date date = new Date(name, email);
-        dateService.save(date);
+        dateRepository.save(date);
         return "Saved";
     }
 
@@ -33,7 +33,7 @@ public class DateController {
     public @ResponseBody
     Iterable<Date> getAllUsers() {
         // This returns a JSON or XML with the users
-        return dateService.findAll();
+        return dateRepository.findAll();
     }
 
 
