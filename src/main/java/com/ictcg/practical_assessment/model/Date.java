@@ -23,7 +23,8 @@ public class Date {// the model contains your data, in this case it's only Local
         this.name = name;
         this.email = email;
     }
-
+//TODO you call delete everything from this line to the bottom, as you are using lombok it already created this for you, you can also see that if you delete everything
+    //then go into target and look at class Date, you will see that it has getters/setters...
     public Integer getId() {
         return id;
     }

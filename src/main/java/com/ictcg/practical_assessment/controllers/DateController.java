@@ -33,6 +33,8 @@ public class DateController {
     public @ResponseBody
     Iterable<Date> getAllUsers() {
         // This returns a JSON or XML with the users
+        //TODO in returns JSON by default as you have put @RestController, if you put @Controller then it should return XML and JSON and you will need to handle that on server side,
+        //TODO with Rest inside you have already define it's response
         return dateRepository.findAll();
     }
 
