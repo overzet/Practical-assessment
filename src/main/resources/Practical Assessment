@@ -9,15 +9,15 @@ Later on persistence layer and also UI as Angular 6 or 7.
 Subjects: Java, Spring boot, Tomcat
 
 Test: Make simple rest spring boot application (version 2.1.3.) with Java 9,
-it should have 1 endpoint date/getDate. When you call that endpoint the result should be current date and time.
+it should have 1 endpoint dateEntity/getDate. When you call that endpoint the result should be current dateEntity and time.
 Response should be in JSON format. You can use Maven or Gradle, but if you are very familiar with maven,
 that I would like from you to do it using Gradle.
 After finishing, upload one copy of project to SVN and another to GiT.
 After that send me links in email.
 
-Request: get localhost:8080/date/getDate
+Request: get localhost:8080/dateEntity/getDate
 
-Response: date: “10/4/2019”,
+Response: dateEntity: “10/4/2019”,
 	     time:  ”11:54”
 
 Time: 3-5 days
@@ -56,7 +56,7 @@ Create CRUD for each functionality that will be added later on for now just Date
 Add DateMapper
 Create in UML online platform example how would you create and connect tables and which tables would you use example of tools for this - UML tool
 Create one endpoint test for R- read operation where you will use @Test annotation.
-Example you will call localhost:8080/getDate on that date you will add 4 weeks and expect that the date is one month after. This part should be done by creating new Class in test package DateServiceTest and inside of it you will create it and test it.
+Example you will call localhost:8080/getDate on that dateEntity you will add 4 weeks and expect that the dateEntity is one month after. This part should be done by creating new Class in test package DateServiceTest and inside of it you will create it and test it.
 
 
 

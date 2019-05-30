@@ -1,7 +1,7 @@
 package com.ictcg.practical_assessment.controllers;
 
-import com.ictcg.practical_assessment.model.Date;
-import com.ictcg.practical_assessment.service.DateRepository;
+import com.ictcg.practical_assessment.entity.DateEntity;
+import com.ictcg.practical_assessment.repository.DateRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ public class DateController {
     private DateRepository dateRepository;
 
     @GetMapping("/getDate/{countryCode}")
-    public Date getDate(@PathVariable String countryCode) {
+    public DateEntity getDate(@PathVariable String countryCode) {
 
         return dateRepository.getDate(countryCode);
     }
@@ -24,17 +24,19 @@ public class DateController {
     public String addNewUser(@RequestParam String name, @RequestParam String email) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
-        Date date = new Date(name, email);
-        dateRepository.save(date);
+        DateEntity dateEntity = new DateEntity(name, email);
+        dateRepository.save(dateEntity);
         return "Saved";
     }
 
     @GetMapping(path = "/all")
     public @ResponseBody
-    Iterable<Date> getAllUsers() {
+    Iterable<DateEntity> getAllUsers() {
         // This returns a JSON or XML with the users
         //TODO in returns JSON by default as you have put @RestController, if you put @Controller then it should return XML and JSON and you will need to handle that on server side,
         //TODO with Rest inside you have already define it's response
+
+        //todo So I can remove line 40?
         return dateRepository.findAll();
     }
 

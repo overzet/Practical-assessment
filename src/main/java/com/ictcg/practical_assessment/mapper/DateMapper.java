@@ -1,7 +1,7 @@
 package com.ictcg.practical_assessment.mapper;
 
-import com.ictcg.practical_assessment.entity.DateDTO;
-import com.ictcg.practical_assessment.model.Date;
+import com.ictcg.practical_assessment.entity.DateEntity;
+import com.ictcg.practical_assessment.model.DateModel;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -9,5 +9,5 @@ import org.mapstruct.Mapping;
 public interface DateMapper {
 
     @Mapping(target = "ID", source = "id")
-    DateDTO customer2DTO(Date dateModel);
+    DateModel customer2DTO(DateEntity dateEntityModel);
 }

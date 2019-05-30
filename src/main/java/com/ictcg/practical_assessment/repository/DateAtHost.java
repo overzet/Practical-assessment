@@ -1,4 +1,4 @@
-package com.ictcg.practical_assessment.service;
+package com.ictcg.practical_assessment.repository;
 
 import java.io.DataInputStream;
 import java.io.IOException;
