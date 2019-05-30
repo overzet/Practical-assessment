@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
-@RestController//to be able to receive HTTP requests,
+@RestController
 @RequestMapping("date")
 public class DateController {
 
@@ -22,8 +22,6 @@ public class DateController {
 
     @GetMapping(path = "/add")
     public String addNewUser(@RequestParam String name, @RequestParam String email) {
-        // @ResponseBody means the returned String is the response, not a view name
-        // @RequestParam means it is a parameter from the GET or POST request
         DateEntity dateEntity = new DateEntity(name, email);
         dateRepository.save(dateEntity);
         return "Saved";
