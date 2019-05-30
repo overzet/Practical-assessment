@@ -1,6 +1,7 @@
 package com.ictcg.practical_assessment.repository;
 
 import com.ictcg.practical_assessment.entity.DateEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -9,13 +10,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 
-//TODO This should be named DateServiceImpl also it will implement DateService interface, --> DateRepository
+//TODO This should be named DateServiceImpl also it will implement DateService interface,
+// now called --> DateRepository
 
 /**
  * DateService will have method getDate(String countryCode), and this class will override that method
  */
 @Service
 public class DateServiceImpl implements DateRepository {
+
+    @Autowired
+    DateRepository dateRepository;
 
     private static final String EU = "EU";
     private static final String US = "US";
