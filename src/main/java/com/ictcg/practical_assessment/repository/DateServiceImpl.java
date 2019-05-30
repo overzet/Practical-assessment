@@ -10,7 +10,10 @@ import java.util.Locale;
 
 
 //TODO This should be named DateServiceImpl also it will implement DateService interface, --> DateRepository
-/** DateService will have method getDate(String countryCode), and this class will override that method*/
+
+/**
+ * DateService will have method getDate(String countryCode), and this class will override that method
+ */
 @Service
 public class DateServiceImpl implements DateRepository {
 
@@ -49,7 +52,7 @@ public class DateServiceImpl implements DateRepository {
 //TODO remove last else and just leave return null;
         }
 
-            return null;
+        return null;
 
 
     }
