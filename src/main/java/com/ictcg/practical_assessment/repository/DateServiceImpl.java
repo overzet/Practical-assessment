@@ -25,11 +25,9 @@ public class DateServiceImpl implements DateRepository {
     private static final String EU = "EU";
     private static final String US = "US";
 
-    //TODO Autowired DateRepository, @Autowired DateRepository dateRepository
-    //In db you will need to create table to save this record that can be done after Unit & Integration Tests or before, you will then before each return call dateRepository.save(date)
-
+    //TODO In db you will need to create table to save this record that can be done after Unit & Integration Tests or before, you will then before each return call dateRepository.save(date)
+//TODO create method that has dateRepository.save() inside
     public DateEntity getDate(String countryCode) {
-//TODO Rename dataModel to date, modelRepresent a class we already know that this is a class
         DateEntity dateEntityModel = new DateEntity();
 
         dateEntityModel.setLocalDate(LocalDate.now());
@@ -44,9 +42,9 @@ public class DateServiceImpl implements DateRepository {
             String uTime = dateEntityModel.getLocalTime().format(usaTimeFormat);
 
             return dateEntityModel;
-//TODO dont use String, use Constants , private static final String EU = "EU" ; declare this before the first method in class, same for pattern line 35 and 36 and 25,26
-        } else if (countryCode.equals(EU)) {
 
+        } else if (countryCode.equals(EU)) {
+//TODO dont use String, use Constants , private static final String DATE_REGEX = "dd/MM/YYYY" ; TIME_REGEX ="hh:mm"
             DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/YYYY", Locale.FRENCH);
             DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm", Locale.FRENCH);
 
@@ -54,7 +52,7 @@ public class DateServiceImpl implements DateRepository {
             String sTime = dateEntityModel.getLocalTime().format(timeFormatter);
 
             return dateEntityModel;
-//TODO remove last else and just leave return null;
+
         }
 
         return null;
