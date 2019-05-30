@@ -8,10 +8,14 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+
 //TODO This should be named DateServiceImpl also it will implement DateService interface, --> DateRepository
 /** DateService will have method getDate(String countryCode), and this class will override that method*/
 @Service
 public class DateServiceImpl implements DateRepository {
+
+    private static final String EU = "EU";
+    private static final String US = "US";
 
     //TODO Autowired DateRepository, @Autowired DateRepository dateRepository
     //In db you will need to create table to save this record that can be done after Unit & Integration Tests or before, you will then before each return call dateRepository.save(date)
@@ -23,7 +27,7 @@ public class DateServiceImpl implements DateRepository {
         dateEntityModel.setLocalDate(LocalDate.now());
         dateEntityModel.setLocalTime(LocalTime.now());
 
-        if (countryCode.equals("US")) {
+        if (countryCode.equals(US)) {
 
             DateTimeFormatter usaDateFormat = DateTimeFormatter.ofPattern("MMM dd yyyy");
             DateTimeFormatter usaTimeFormat = DateTimeFormatter.ofPattern("h:mm a");
@@ -33,7 +37,7 @@ public class DateServiceImpl implements DateRepository {
 
             return dateEntityModel;
 //TODO dont use String, use Constants , private static final String EU = "EU" ; declare this before the first method in class, same for pattern line 35 and 36 and 25,26
-        } else if (countryCode.equals("EU")) {
+        } else if (countryCode.equals(EU)) {
 
             DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/YYYY", Locale.FRENCH);
             DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm", Locale.FRENCH);
@@ -43,10 +47,10 @@ public class DateServiceImpl implements DateRepository {
 
             return dateEntityModel;
 //TODO remove last else and just leave return null;
-        } else {
+        }
 
             return null;
-        }
+
 
     }
 
